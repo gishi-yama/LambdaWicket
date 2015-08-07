@@ -1,2 +1,0 @@
-# LambdaWicket
-wicket7をベースにLambda式を加えてみる
