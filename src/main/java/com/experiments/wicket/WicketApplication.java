@@ -22,7 +22,7 @@ public class WicketApplication extends WebApplication
 //		default
 //		return HomePage.class;
 		
-		//LambdaLink確認用
+		//LambdaLink
 		return LambdaLinkPage.class;
 	}
 
