@@ -3,6 +3,8 @@ package com.experiments.wicket;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
+import com.experiments.wicket.Link.page.LambdaLinkPage;
+
 /**
  * Application object for your web application.
  * If you want to run this application without deploying, run the Start class.
@@ -17,7 +19,11 @@ public class WicketApplication extends WebApplication
 	@Override
 	public Class<? extends WebPage> getHomePage()
 	{
-		return HomePage.class;
+//		default
+//		return HomePage.class;
+		
+		//LambdaLink確認用
+		return LambdaLinkPage.class;
 	}
 
 	/**
@@ -28,6 +34,5 @@ public class WicketApplication extends WebApplication
 	{
 		super.init();
 
-		// add your configuration here
 	}
 }
