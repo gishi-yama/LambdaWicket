@@ -7,7 +7,7 @@ public class LambdaLink<T> extends Link<T>{
 	
 	private static final long serialVersionUID = -1L;
 
-	private Runnable clickEvent;
+	private SerializableConsumer<T> consumer;
 	
 	public LambdaLink(String id) {
 		super(id);
@@ -17,16 +17,16 @@ public class LambdaLink<T> extends Link<T>{
 		super(id, model);
 	}
 
-	public LambdaLink(String id, Runnable clickEvent) {
+	public LambdaLink(String id, SerializableConsumer<T> consumer) {
 		super(id);
-		this.clickEvent = clickEvent;
+		this.consumer = consumer;
 	}
 	
 	@Override
 	public void onClick() {
 
 		try{
-			clickEvent.run();
+		  consumer.accept(getModelObject());
 		}catch(NullPointerException e){
 		}
 	}
